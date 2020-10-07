@@ -14,12 +14,11 @@ import net.dv8tion.jda.api.entities.VoiceChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
-import net.sprengel.token;
 import net.sprengel.music.PlayerManager;
 
 public class CommandListener extends ListenerAdapter {
 	
-	IPInfo ipInfo = IPInfo.builder().setToken(token.IpInfoToken).build();
+	IPInfo ipInfo = IPInfo.builder().setToken([TOKEN]).build();
 	
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
@@ -47,7 +46,7 @@ public class CommandListener extends ListenerAdapter {
 					
 					if(command[1].contains("help")) {
 						
-						channel.sendMessage("**`Commands:`**\r" + "**!s help** - This help text.\r" + "**!s invite** - a Link to Invite this Bot.\r" +  "**!s info** - Information about this Bot.\r" +  "**!s ip** [ip] - Get info about an IP Adress.\r").queue();
+						channel.sendMessage("**`Commands:`**\r" + "**!s help** - This help text.\r" + "**!s invite** - a Link to Invite this Bot.\r" + "**!s source** - A Link to the Source code of this Bot.\r" + "**!s info** - Information about this Bot.\r" +  "**!s ip** [ip] - Get info about an IP Adress.\r").queue();
 						
 					}
 					
@@ -58,12 +57,12 @@ public class CommandListener extends ListenerAdapter {
 					}
 					else if(command[1].contains("source")) {
 						
-						channel.sendMessage("> https://sprengel.net/bot/source").queue();
+						channel.sendMessage("> https://github.com/sprengeldotnet/bot/tree/main/source").queue();
 						
 					}
 					
 					else if(command[1].contains("info")) {
-						channel.sendMessage("**operating system:** Debian GNU/Linux 10 (buster)\r" + "**server location:** central europe\r").queue();
+						channel.sendMessage("**Operating System:** Debian GNU/Linux 10 (buster)\r" + "**Server Location:** central europe (germany)\r").queue();
 					}
 					
 					else if(command[1].contains("ping")) {
@@ -80,6 +79,7 @@ public class CommandListener extends ListenerAdapter {
 								event.getJDA().shutdown();
 								
 								event.getJDA().shutdownNow();
+								
 						}
 						else {
 							channel.sendMessage("bruh").queue();
@@ -169,17 +169,17 @@ public class CommandListener extends ListenerAdapter {
 					}
 					
 					else if(message.contains("sprengel")) {
-						String [] responses = new String[6];
+						String [] responses = new String[7];
 						responses[0] = "hi";
 						responses[1] = "hi :)";
 						responses[2] = "hey";
 						responses[3] = "hey :)";
 						responses[4] = "hello";
 						responses[5] = "hello :)";
+						responses[6] = ":wave:";
 						Random randNum = new Random();
 						channel.sendMessage(responses[(randNum.nextInt(responses.length))]).queue();
 					}
-					
 					else if(message.contains("owo")) {
 						channel.sendMessage("uwu").queue();
 					}
