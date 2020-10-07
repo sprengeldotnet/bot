@@ -33,7 +33,7 @@ public class sprengelbot {
 		
 		INSTANCE = this;
 		
-		jda = new JDABuilder(AccountType.BOT).setToken("NzUxNjg4Mjg5MDQzNjExNzA4.X1MuRQ.4IFnhAZSg2787fZyx1LCh-6CDVY").addEventListeners(new CommandListener()).setAutoReconnect(true).setStatus(OnlineStatus.ONLINE).build();
+		jda = new JDABuilder(AccountType.BOT).setToken([TOKEN]).addEventListeners(new CommandListener()).setAutoReconnect(true).setStatus(OnlineStatus.ONLINE).build();
 		
 		this.audioPlayerManager = new DefaultAudioPlayerManager();
 		this.playerManager = new PlayerManager();
