@@ -143,10 +143,6 @@ public class CommandListener extends ListenerAdapter {
 								
 							}
 							
-							else if(command[1].contains("lofi")) {
-								manager.loadAndPlay(channel, "https://www.youtube.com/watch?v=5qap5aO4i9A");
-							}
-							
 							else {
 								channel.sendMessage("Please send a Youtube url to Listen to.").queue();
 							}
