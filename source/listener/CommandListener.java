@@ -23,7 +23,8 @@ public class CommandListener extends ListenerAdapter {
 	
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
-
+		
+		
 		if(event.isFromType(ChannelType.TEXT)) {
 			
 			String message = event.getMessage().getContentRaw().toLowerCase();
@@ -106,9 +107,6 @@ public class CommandListener extends ListenerAdapter {
 					
 					
 					else if(command[1].contains("join")) {
-							
-							if(event.getAuthor().getId().equals(sprengelid)) {
-								
 								if (audioManager.isConnected()) {
 						            channel.sendMessage("I'm already connected to a channel").queue();
 						            return;
@@ -121,12 +119,9 @@ public class CommandListener extends ListenerAdapter {
 								
 								audioManager.openAudioConnection(voiceChannel);
 						        channel.sendMessage("Joining your voice channel").queue();
-						        
-							}
 						}
 					
 					else if(command[1].contains("quit")) {
-						if(event.getAuthor().getId().equals(sprengelid)) {
 							if(!audioManager.isConnected()) {
 					            channel.sendMessage("I'm not connected to a voice channel").queue();
 					            return;
@@ -135,12 +130,9 @@ public class CommandListener extends ListenerAdapter {
 							manager.getGuildMusicManager(event.getGuild()).player.stopTrack();
 							audioManager.closeAudioConnection();
 					        channel.sendMessage("Disconnected from your channel").queue();
-					        
-						}
 					}
 					
 					else if(command[1].contains("play")) {
-						if(event.getAuthor().getId().equals(sprengelid)) {
 							
 							if(command[1].startsWith("play http")) {
 								
@@ -158,16 +150,10 @@ public class CommandListener extends ListenerAdapter {
 							else {
 								channel.sendMessage("Please send a Youtube url to Listen to.").queue();
 							}
-					        
-						}
 					}
 					
 					else if(command[1].contains("stop")) {
-						if(event.getAuthor().getId().equals(sprengelid)) {
-							
 					        manager.getGuildMusicManager(event.getGuild()).player.stopTrack();
-					        
-						}
 					}
 					
 					else {
@@ -234,7 +220,6 @@ public class CommandListener extends ListenerAdapter {
 					privatechannel.sendMessage("bruh imagine sending a dm to a bot").queue();
 					privatechannel.sendTyping().queueAfter(500, TimeUnit.MILLISECONDS);
 					privatechannel.sendMessage("Please send a message to **`sprengel#0615`** for support or something similar.").queueAfter(3, TimeUnit.SECONDS);
-          
 			}
 		}
 		
