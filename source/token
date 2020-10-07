@@ -1,8 +1,0 @@
-package net.sprengel;
-
-public class token {
-
-    public static String IpInfoToken = "[TOKEN]";
-    public static String bot = "[TOKEN]";
-
-}
