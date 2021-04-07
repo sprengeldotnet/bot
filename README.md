@@ -1,2 +1,1 @@
-# Discord bot
-Open Source Discord bot
+# Shitty Java Discord bot
